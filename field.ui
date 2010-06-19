@@ -1,0 +1,505 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>611</width>
+    <height>549</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QSplitter" name="splitter" >
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QWidget" name="layoutWidget" >
+      <layout class="QHBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QToolButton" name="zoomIn" >
+           <property name="text" >
+            <string>...</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="icons.qrc" >:/viewmag+.png</iconset>
+           </property>
+           <property name="autoRepeat" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="zoomOut" >
+           <property name="text" >
+            <string>...</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="icons.qrc" >:/viewmag-.png</iconset>
+           </property>
+           <property name="autoRepeat" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="play" >
+           <property name="text" >
+            <string>...</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="icons.qrc" >:/player_play.png</iconset>
+           </property>
+           <property name="autoRepeat" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="stop" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>...</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="icons.qrc" >:/player_stop.png</iconset>
+           </property>
+           <property name="autoRepeat" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="pause" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>...</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="icons.qrc" >:/player_pause.png</iconset>
+           </property>
+           <property name="checkable" >
+            <bool>true</bool>
+           </property>
+           <property name="autoRepeat" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGraphicsView" name="field" >
+         <property name="dragMode" >
+          <enum>QGraphicsView::ScrollHandDrag</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget" >
+      <layout class="QHBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label" >
+           <property name="text" >
+            <string>Input</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="input" />
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2" >
+           <property name="text" >
+            <string>Output</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextBrowser" name="output" />
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" >
+           <property name="margin" >
+            <number>0</number>
+           </property>
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" >
+             <property name="margin" >
+              <number>0</number>
+             </property>
+             <property name="spacing" >
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QToolButton" name="hwall" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/hwall.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="vwall" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/vwall.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="swall" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/swall.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="bswall" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/bswall.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" >
+             <property name="margin" >
+              <number>0</number>
+             </property>
+             <property name="spacing" >
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QToolButton" name="toolButton_5" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/lsluice.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_26" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/rsluice.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_27" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/usluice.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_28" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/dsluice.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" >
+             <property name="margin" >
+              <number>0</number>
+             </property>
+             <property name="spacing" >
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QToolButton" name="toolButton_29" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/processor.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_30" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_31" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_32" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" >
+             <property name="margin" >
+              <number>0</number>
+             </property>
+             <property name="spacing" >
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QToolButton" name="toolButton_33" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/always.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_34" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_35" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_36" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" >
+             <property name="margin" >
+              <number>0</number>
+             </property>
+             <property name="spacing" >
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QToolButton" name="toolButton_37" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_38" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_39" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_40" >
+               <property name="text" >
+                <string>...</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="icons.qrc" >:/terminate.svg</iconset>
+               </property>
+               <property name="checkable" >
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="icons.qrc" />
+ </resources>
+ <connections/>
+</ui>

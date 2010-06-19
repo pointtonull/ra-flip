@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-3.9.dtd">
+<!-- Project file for project ra-flip -->
+<!-- Saved: 2007-04-30, 10:48:40 -->
+<!-- Copyright (C) 2007 Roberto Alsina, ralsina@kde.org -->
+<Project version="3.9">
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <UIType>Qt4</UIType>
+  <Description>A pretty graphical version of Flip:
+
+http://www.daimi.au.dk/~eriksoe/Flip/index.html</Description>
+  <Version>0.1</Version>
+  <Author>Roberto Alsina</Author>
+  <Email>ralsina@kde.org</Email>
+  <Sources>
+    <Source>
+      <Name>Ui_field.py</Name>
+    </Source>
+    <Source>
+      <Name>ra-flip.py</Name>
+    </Source>
+    <Source>
+      <Name>icons_rc.py</Name>
+    </Source>
+  </Sources>
+  <Forms>
+    <Form>
+      <Name>field.ui</Name>
+    </Form>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+  </Others>
+  <MainScript>
+    <Name>ra-flip.py</Name>
+  </MainScript>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.ui" type="FORMS" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+  </FiletypeAssociations>
+</Project>

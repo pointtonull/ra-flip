@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>always.svg</file>
+        <file>ball.svg</file>
+        <file>bswall.svg</file>
+        <file>dsluice.svg</file>
+        <file>hwall.svg</file>
+        <file>lsluice.svg</file>
+        <file>player_pause.png</file>
+        <file>player_play.png</file>
+        <file>player_stop.png</file>
+        <file>processor.svg</file>
+        <file>rsluice.svg</file>
+        <file>swall.svg</file>
+        <file>terminate.svg</file>
+        <file>usluice.svg</file>
+        <file>viewmag+.png</file>
+        <file>viewmag-.png</file>
+        <file>vwall.svg</file>
+    </qresource>
+</RCC>
