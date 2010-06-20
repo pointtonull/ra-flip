@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-import sys
-import random
 from PyQt4 import QtCore, QtGui, QtSvg
-
 from Ui_field import Ui_Form
-import icons_rc
 from decoradores import Verbose
+from functools import wraps
+import icons_rc
+import random
+import sys
 
 VERBOSE = 2
 DELAY = 100
@@ -138,6 +138,59 @@ EXAMPLES = {
         r"     ^+ X/       ",
      )),
 }
+
+
+
+class s32int(int):
+    @wraps(int.__new__)
+    def __new__(cls, value):
+        """
+        >>> s32int(2 ** 31)
+        0
+        >>> s32int(2 ** 31 + 10)
+        -10
+        >>> s32int(-5)
+        -5
+        >>> s32int(-(2 ** 31 - 5))
+        -2147483643
+        """
+        abs_value = value & (2 ** 31 - 1)
+        if value & (2 ** 31):
+            return int.__new__(cls, -abs_value)
+        else:
+            return int.__new__(cls, abs_value)
+
+    @wraps(int.__add__)
+    def __add__(self, y):
+        """
+        >>> s32int(2 ** 31 - 1) + 1
+        0
+        >>> s32int(2 ** 31 - 1) + 2
+        -1
+        >>> s32int(2 ** 31) - 1
+        -1
+        """
+        return s32int(int.__add__(self, y))
+
+    @wraps(int.__mul__)
+    def __mul__(self, y):
+        """
+        >>> s32int(3) * 2 ** 29
+        1610612736
+        >>> s32int(3) * 2 ** 30
+        -1073741824
+        >>> s32int(10) * (-1)
+        -10
+        """
+        return s32int(int.__mul__(self, y))
+
+    @wraps(int.__mod__)
+    def __mod__(self, y):
+        return s32int(int.__mod__(self, y))
+
+    @wraps(int.__neg__)
+    def __neg__(self):
+        return s32int(int.__neg__(self))
 
 
 class FieldWidget(QtGui.QWidget):
@@ -304,7 +357,8 @@ class Field(QtCore.QObject):
             for j in range(0, self.height):
                 FlipObject(self, i, j)
                 pass
-        self.objects = [ [ None for y in range (0, self.height) ] for x in range(0, self.width)]
+        self.objects = [ [ None for y in range (0, self.height) ]
+            for x in range(0, self.width)]
                 
         
     @Verbose(VERBOSE)
