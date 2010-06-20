@@ -3,7 +3,6 @@
 from PyQt4 import QtCore, QtGui, QtSvg
 from Ui_field import Ui_Form
 from decoradores import Verbose
-from functools import wraps
 import icons_rc
 import random
 import sys
@@ -142,7 +141,7 @@ EXAMPLES = {
 
 
 class s32int(int):
-    @wraps(int.__new__)
+    
     def __new__(cls, value):
         """
         >>> s32int(2 ** 31)
@@ -160,7 +159,7 @@ class s32int(int):
         else:
             return int.__new__(cls, abs_value)
 
-    @wraps(int.__add__)
+    
     def __add__(self, y):
         """
         >>> s32int(2 ** 31 - 1) + 1
@@ -172,7 +171,7 @@ class s32int(int):
         """
         return s32int(int.__add__(self, y))
 
-    @wraps(int.__mul__)
+    
     def __mul__(self, y):
         """
         >>> s32int(3) * 2 ** 29
@@ -184,11 +183,11 @@ class s32int(int):
         """
         return s32int(int.__mul__(self, y))
 
-    @wraps(int.__mod__)
+    
     def __mod__(self, y):
         return s32int(int.__mod__(self, y))
 
-    @wraps(int.__neg__)
+    
     def __neg__(self):
         return s32int(int.__neg__(self))
 
