@@ -427,6 +427,7 @@ class Field(QtCore.QObject):
                 continue
             ball.animated = False
 
+        # FIXME: use animations
         for i in range(0, 10):
             for i in range(0, len(self.balls)):
                 ball = self.balls[i]
@@ -1082,7 +1083,7 @@ class CharOut(TextObject):
 
     @Verbose(VERBOSE)
     def handle(self, ball):
-            self.field.output(chr(ball.value % 256))
+            self.field.output(chr(ball.value % 2 ** 8))
             ball.kill()
 
 
@@ -1094,7 +1095,7 @@ class UnicodeOut(TextObject):
 
     @Verbose(VERBOSE)
     def handle(self, ball):
-            self.field.output(chr(ball.value % 256))
+            self.field.output(unichr(ball.value % 0x110000))
             ball.kill()
 
 
